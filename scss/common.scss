@@ -1,0 +1,132 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border-radius: 65px;
+	font-weight: 700;
+	font-size: rem(16);
+	line-height: rem(24);
+    height: calc($bh + rem(24));
+    max-width: fit-content;
+}
+.button > span {
+	padding: 15px 35px;
+}
+.title-product {
+    color: #FF4C0D;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 80, 30);
+}
+.subtitle-product {
+    font-weight: 600;
+    @include adaptiveValue("font-size", 30, 16);
+}
+.gradient {
+    z-index: 1;
+}
+
+.title-section {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 45, 25);
+}
+
+.info-title_content {
+    font-weight: 600;
+    @include adaptiveValue("font-size", 20, 16);
+    @include adaptiveValue("line-height", 50, 33);
+}
+
+.paragraph-content {
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 150%;
+    @include adaptiveValue("font-size", 14, 12);
+}
+
+//========================================================================================================================================================
+
+.product__container .info-content .info-title_content {
+    @media (max-width: $tablet){
+        color: $orange;
+    }
+}
+.product__container .info-content :hover  {
+    opacity: 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+}
+.product__container .info-content :hover .info-title_content {
+    color: $orange;
+}
+.product__container .info-content:hover .paragraph-content {
+    color: $mainColor;
+}
+
+.product {
+    position: relative;
+		// .product__img
+    &__img {
+        @media (max-width: $tablet) {
+            display: none;
+        }
+    }
+    &__img-1 {
+        width: math.div(760, 560);
+        height: math.div(400, 350);
+    }
+    &__img-2 {
+        width: 360px;
+        height: 300px;
+        @include adaptiveValue ("margin-left", 30, 10);
+        @media (max-width: 1189px) {
+            visibility: hidden;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+
+.info-content {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width:$tablet) {
+        display: flex;
+        flex-direction: column;
+    }
+    // .info-content__box
+
+    &__box {
+        color: $mainColor;
+        opacity: 0.6;
+        @media (max-width: $tablet) {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+.info-title {
+
+    // .info-title_content
+
+    &_content {
+    }
+}
+
+
+
+//========================================================================================================================================================
+// fonts, paragraphs, titles
+
+
+.color-title {
+    color: $orange;
+    font-weight: 600;
+    @include adaptiveValue("line-height", 110%, 120%);
+    @include adaptiveValue("font-size", 40, 25);
+}
+
+
+
